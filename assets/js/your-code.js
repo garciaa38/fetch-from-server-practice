@@ -17,11 +17,32 @@ export function getDogNumberTwo() {
 }
 
 export function postNewDog() {
-    // Your code here
+    const url = '/dogs';
+    const options = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: new URLSearchParams({
+            name: 'Michi',
+            age: 4
+        })
+    };
+
+    return fetch(url, options)
+
 }
 
 export function postNewDogV2(name, age) {
-     // Your code here
+    const url = '/dogs';
+    const options = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: new URLSearchParams({
+            name: name,
+            age: age
+        })
+    };
+
+    return fetch(url, options)
 }
 
 export function deleteDog(id) {
